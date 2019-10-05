@@ -17,9 +17,12 @@ const Chart = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const res = await axios.get("https://dev.cong.appwifi.com/stat/client");
-      setData(res.data.data);
-      console.log(res.data.data);
+      try {
+        const res = await axios.get("https://dev.cong.appwifi.com/stat/client");
+        setData(res.data.data);
+      } catch (e) {
+        throw e;
+      }
     };
     fetchData();
   }, []);
