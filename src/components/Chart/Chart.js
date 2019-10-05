@@ -36,7 +36,7 @@ const Chart = () => {
     d = d[1].concat("/", d[0], "/", d[2]);
 
     let h = separate[1].trim().split(":");
-    if (h[2].slice(3, 5) === "PM") {
+    if (h[2].slice(3, 5) === "PM" && h[0] !== "12") {
       let hour = parseInt(h[0], 10) + 12;
       h = hour.toString().concat(":", h[1]);
     } else {
